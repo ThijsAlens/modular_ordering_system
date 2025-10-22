@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import json
-import logging
 import threading
+from pathlib import Path
 
 class JSON_Filewriter(ABC):
     """
@@ -13,39 +13,35 @@ class JSON_Filewriter(ABC):
             with open(file_path, 'r') as file:
                 pass
         except FileNotFoundError:
-            logging.error(f"File not found: {file_path}")
+            print(f"File not found: {file_path}")
             return
-        self._file_path: str = file_path
+        self._file_path: Path = Path(file_path)
         self._lock: threading.Lock = threading.Lock()
 
-    
-    def write_to_file(self, data: str, truncate: bool = False) -> None:
+
+    def append_to_file(self, data: list[object], truncate: bool = False) -> None:
         """
         Writes JSON data to a file.
         
         Args:
-            data (str): The JSON data to write to the file. Must be a valid JSON string.
+            data (list[object]): The data that needs to be written to the file. Each object must have a serialize() method that returns a JSON-serializable dictionary.
             truncate (bool): If True, truncates the file before writing. Defaults to False.
         
         Returns:
             None
         """
-
-        try:
-            json.loads(data)
-        except json.JSONDecodeError:
-            logging.error("Data must be a valid JSON string.")
-            return
-
         with self._lock:
-            with open(self._file_path, 'r+') as file:
-                if truncate:
-                    file.truncate(0)
-                file.write(data)
+            try:
+                file_content = json.loads(self._file_path.read_text()) if not truncate else []
+                file_content.extend([obj.serialize() for obj in data])
+                json_data = json.dumps(file_content, indent=4)
+                self._file_path.write_text(json_data)
+            except json.JSONDecodeError:
+                print("Data must be a valid JSON string.")
         return
-    
-    
-    def read_from_file(self) -> str | None:
+
+
+    def read_everything_from_file(self, object_class: type) -> list[object] | object | None:
         """
         Reads JSON data from a file.
         
@@ -57,10 +53,10 @@ class JSON_Filewriter(ABC):
         """
         
         with self._lock:
-            with open(self._file_path, 'r') as file:
-                try:
-                    data = json.load(file)
-                except json.JSONDecodeError:
-                    logging.error(f"Error decoding JSON from file: {self._file_path}")
-                    return None
-        return data
+            try:
+                json_data = json.loads(self._file_path.read_text())
+                return [object_class.deserialize(item) for item in json_data]
+
+            except (json.JSONDecodeError, FileNotFoundError):
+                print(f"Error reading from file: {self._file_path}")
+                return None

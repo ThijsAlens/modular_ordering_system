@@ -1,4 +1,10 @@
-{
-    "name": "example",
-    "value": 42
-}
+[
+    {
+        "name": "example",
+        "value": 42
+    },
+    {
+        "name": "example2",
+        "value": 84
+    }
+]

@@ -3,7 +3,16 @@
 # --------------------------------- #
 
 # Singlton JSON_filewriter instances
+from back_end.JSON_filewriter.JSON_filewriter import JSON_Filewriter
+from pathlib import Path
+from back_end.JSON_statefiles.filewriter_orders import Filewriter_orders
+from back_end.JSON_statefiles.filewriter_pending_tickets import Filewriter_pending_tickets
 
+FILEWRITERS = {
+    "JSON_statefiles/orders.json": Filewriter_orders(Path.cwd() / "back_end" / "JSON_statefiles" / "orders.json"),
+    "JSON_statefiles/pending_tickets.json": Filewriter_pending_tickets(Path.cwd() / "back_end" / "JSON_statefiles" / "pending_tickets.json"),
+    "JSON_backup/finished_orders.json": JSON_Filewriter(Path.cwd() / "back_end" / "JSON_backup" / "finished_orders.json"),
+}
 
 # Logger configuration
 import logging

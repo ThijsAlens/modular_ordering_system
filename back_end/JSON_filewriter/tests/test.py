@@ -33,5 +33,7 @@ class TestData:
 if __name__ == "__main__":
     test = Test_Filewriter("test.json")
     data = TestData("example", 42)
-    test.write_to_file(json.dumps(data.serialize(), indent=4), truncate=True)
-    print(test.read_from_file())
+    data2 = TestData("example2", 84)
+    test.append_to_file([data])
+    test.append_to_file([data, data2], truncate=True)
+    print(test.read_everything_from_file(TestData)[0])

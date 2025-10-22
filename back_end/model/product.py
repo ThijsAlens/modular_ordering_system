@@ -1,29 +1,29 @@
+from pydantic import BaseModel
+
 from back_end.enums.destination import Destination
 from back_end.enums.product_group import Product_group
 
-class Product:
+class Product(BaseModel):
     """
     A "Product" is a single thing that can be used in an ordered, for example a glass of water or a pancake.
     Something that is on the menu, to actually order products, an "Item" is needed.
     """
-    def __init__(self, id: int, name: str, price: float, destination: Destination, group: Product_group = Product_group.NO_GROUP, is_active: bool = True):
-        self.id: int = id
-        self.name: str = name
-        self.price: float = price
-        self.destination: Destination = destination
-        self.group: Product_group = group
-        self.is_active: bool = is_active
-
+    product_id: int
+    name: str
+    price: float
+    destination: Destination
+    group: Product_group = Product_group.NO_GROUP
+    is_active: bool = True
 
     """
     Some generic functions to easily print, serialize and deserialize objects
     """
     def __str__(self) -> str:
-        return f"Product(id={self.id}, name={self.name}, price={self.price}, destination={self.destination}, group={self.group}, is_active={self.is_active})"
+        return f"Product(product_id={self.product_id}, name={self.name}, price={self.price}, destination={self.destination}, group={self.group}, is_active={self.is_active})"
 
     def serialize(self) -> dict:
         return {
-            "id": self.id,
+            "product_id": self.product_id,
             "name": self.name,
             "price": self.price,
             "destination": self.destination.name,
@@ -33,14 +33,14 @@ class Product:
     
     @staticmethod
     def deserialize(data):
-        return Product(id=data["id"], name=data["name"], price=data["price"], destination=data["destination"], group=data["group"], is_active=data["is_active"])
+        return Product(product_id=data["product_id"], name=data["name"], price=data["price"], destination=data["destination"], group=data["group"], is_active=data["is_active"])
     
 
     """
     The nessecairy getters and setters
     """
-    def get_id(self) -> int:
-        return self.id
+    def get_product_id(self) -> int:
+        return self.product_id
 
     def get_name(self) -> str:
         return self.name

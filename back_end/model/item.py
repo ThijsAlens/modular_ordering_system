@@ -1,17 +1,14 @@
 import logging
+from pydantic import BaseModel
 
-from model.product import Product
+from back_end.model.product import Product
 
-class Item:
+class Item(BaseModel):
     """
     An "Item" is a specific product that has been selected for an order, along with any special instructions or comments.
     """
-    def __init__(self, product: Product, comment: str = ""):
-        if product is None:
-            logging.error("Product can't be None.")
-            raise ValueError("Product cannot be None")
-        self.product: Product = product
-        self.comment: str = comment
+    product: Product
+    comment: str = ""
 
 
     """

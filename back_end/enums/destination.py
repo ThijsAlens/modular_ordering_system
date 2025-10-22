@@ -1,6 +1,6 @@
 from enum import Enum, auto
 
-class Destination(Enum):
-    KITCHEN = auto()
-    BAR = auto()
-    DESSERT = auto()
+class Destination(str, Enum):
+    KITCHEN = "kitchen"
+    BAR = "bar"
+    DESSERT = "dessert"
