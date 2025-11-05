@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "order_id": 0,
+        "table_reference": "ab",
+        "time_at_creation": "2025-11-05T12:41:33.320049",
+        "tickets": [],
+        "status": "PAYED"
+    }
+]

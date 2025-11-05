@@ -12,3 +12,4 @@ source venv/bin/activate
 
 # Install required packages
 pip install fastapi "uvicorn[standard]" gunicorn
+pip install requests

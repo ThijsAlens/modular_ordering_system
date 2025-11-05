@@ -4,9 +4,9 @@ from back_end.JSON_filewriter.JSON_filewriter import JSON_Filewriter
 from back_end.model.order import Order
 
 
-class Filewriter_orders(JSON_Filewriter):
+class Filewriter_finished_orders(JSON_Filewriter):
     """
-    A class for managing the "orders.json" state file.
+    A class for managing the "finished_orders.json" state file.
     """
 
     def __init__(self, file_path: str):

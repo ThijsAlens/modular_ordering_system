@@ -26,6 +26,8 @@ if [ "$1" == "dev" ]; then
     # -----------------
     echo "Starting application in development mode..."
 
+    export APP_ENV="development" # Set environment variable for development
+
     # Function to kill all child processes on exit
     cleanup() {
         echo -e "\nShutting down servers..."
@@ -59,6 +61,8 @@ else
     #  PRODUCTION MODE
     # -----------------
     echo "Starting application in production mode..."
+
+    export APP_ENV="production" # Set environment variable for production
 
     # Start backend server with Gunicorn in background
     # Binds to 0.0.0.0 to be accessible from outside (e.g., Nginx)

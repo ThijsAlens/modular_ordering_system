@@ -1,1 +1,29 @@
-[]
+[
+    {
+        "ticket_id": 0,
+        "order_id": 0,
+        "status": "pending",
+        "destination": "bar",
+        "items": [],
+        "comment": "",
+        "timestamp": "2025-10-23T12:23:50.244042"
+    },
+    {
+        "ticket_id": 1,
+        "order_id": 0,
+        "status": "pending",
+        "destination": "kitchen",
+        "items": [],
+        "comment": "",
+        "timestamp": "2025-10-23T12:23:50.244042"
+    },
+    {
+        "ticket_id": 2,
+        "order_id": 1,
+        "status": "pending",
+        "destination": "kitchen",
+        "items": [],
+        "comment": "",
+        "timestamp": "2025-10-23T12:23:50.244042"
+    }
+]
