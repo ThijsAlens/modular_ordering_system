@@ -17,13 +17,14 @@ class Ticket(BaseModel):
     status: Ticket_status = Ticket_status.PENDING
     items: list[Item] = []
     comment: str = ""
-    timestamp: datetime = datetime.now()
+    time_at_creation: datetime = datetime.now()
+    creator: str = ""
 
     def __str__(self) -> str:
         items_str = ", ".join(str(item) for item in self.items)
         return (f"Ticket(ticket_id={self.ticket_id}, order_id={self.order_id}, status={self.status}, "
                 f"destination={self.destination}, items=[{items_str}], comment='{self.comment}', "
-                f"timestamp={self.timestamp})")
+                f"time_at_creation={self.time_at_creation}, creator={self.creator})")
     
     def serialize(self) -> dict:
         return {
@@ -33,13 +34,14 @@ class Ticket(BaseModel):
             "destination": self.destination,
             "items": [item.serialize() for item in self.items],
             "comment": self.comment,
-            "timestamp": self.timestamp.isoformat()
+            "time_at_creation": self.time_at_creation.isoformat(),
+            "creator": self.creator
         }
     
     @staticmethod
     def deserialize(data: dict):
         items = [Item.deserialize(item_data) for item_data in data["items"]]
-        return Ticket(ticket_id=data["ticket_id"], order_id=data["order_id"], destination=data["destination"], status=data["status"], items=items, comment=data["comment"], timestamp=datetime.fromisoformat(data["timestamp"]))
+        return Ticket(ticket_id=data["ticket_id"], order_id=data["order_id"], destination=data["destination"], status=data["status"], items=items, comment=data["comment"], time_at_creation=datetime.fromisoformat(data["time_at_creation"]), creator=data["creator"])
     
     """
     The nessecairy getters and setters
@@ -63,6 +65,10 @@ class Ticket(BaseModel):
 
     def get_items(self) -> list[Item]:
         return self.items
+    
+    def set_items(self, items: list[Item]) -> None:
+        self.items = items
+        return
 
     def get_comment(self) -> str:
         return self.comment
@@ -71,20 +77,27 @@ class Ticket(BaseModel):
         self.comment = comment
         return
 
-    def get_timestamp(self) -> datetime:
-        return self.timestamp
+    def get_time_at_creation(self) -> datetime:
+        return self.time_at_creation
+
+    def get_creator(self) -> str:
+        return self.creator
     
     """
     Other methods
     """
 
-    def add_item(self, item: Item) -> None:
-        if item is None:
-            logging.error("Item cannot be None")
-            raise ValueError("Item cannot be None")
-        self.items.append(item)
+    def add_items(self, items: list[Item]) -> None:
+        if any(item is None for item in items):
+            logging.error("Items cannot contain None values")
+            raise ValueError("Items cannot contain None values")
+        self.items.extend(items)
         return
     
-    def remove_item(self, item: Item) -> None:
-        self.items.remove(item)
+    def remove_items(self, items: list[Item]) -> None:
+        for item in items:
+            try:
+                self.items.remove(item)
+            except ValueError:
+                logging.warning(f"Item {item} not found in ticket {self.ticket_id}")
         return

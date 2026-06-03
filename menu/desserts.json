@@ -1,0 +1,37 @@
+{
+    "destination": "dessert",
+    "products": [
+        {
+            "product_id": 12,
+            "name": "Tiramisu",
+            "price": 7.5,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 13,
+            "name": "Dame blanche",
+            "price": 6.0,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 14,
+            "name": "Dame noir",
+            "price": 6.0,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 15,
+            "name": "Appelcake",
+            "price": 4.0,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        }
+    ]
+}

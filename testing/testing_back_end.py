@@ -36,7 +36,7 @@ class TestBackEnd(unittest.TestCase):
             self.fail(f"Failed to create item: {e}")
 
         try:
-            t1 = Ticket(ticket_id=1, order_id=1, destination=Destination.KITCHEN, status=Ticket_status.PENDING, items=[i1], comment="test_ticket")
+            t1 = Ticket(ticket_id=1, order_id=1, destination=Destination.KITCHEN, status=Ticket_status.PENDING, items=[i1], comment="test_ticket", creator="test_creator")
         except Exception as e:
             self.fail(f"Failed to create ticket: {e}")
 
@@ -60,7 +60,7 @@ class TestBackEnd(unittest.TestCase):
 
         p1 = Product(product_id=1, name="test_p1", price=5.0, destination=Destination.KITCHEN, group=Product_group.FOOD, is_active=True)
         i1 = Item(product=p1, comment="test_item")
-        t1 = Ticket(ticket_id=1, order_id=1, destination=Destination.KITCHEN, status=Ticket_status.PENDING, items=[i1], comment="test_ticket")
+        t1 = Ticket(ticket_id=1, order_id=1, destination=Destination.KITCHEN, status=Ticket_status.PENDING, items=[i1], comment="test_ticket", creator="test_creator")
         o1 = Order(order_id=1, table_reference="1", tickets=[t1], status=Order_status.ACTIVE)
 
         serialized_order = o1.serialize()
@@ -85,7 +85,7 @@ class TestBackEnd(unittest.TestCase):
 
         p1 = Product(product_id=1, name="test_p1", price=5.0, destination=Destination.KITCHEN, group=Product_group.FOOD, is_active=True)
         i1 = Item(product=p1, comment="test_item")
-        t1 = Ticket(ticket_id=1, order_id=1, destination=Destination.KITCHEN, status=Ticket_status.PENDING, items=[i1], comment="test_ticket")
+        t1 = Ticket(ticket_id=1, order_id=1, destination=Destination.KITCHEN, status=Ticket_status.PENDING, items=[i1], comment="test_ticket", creator="test_creator")
         o1 = Order(order_id=1, table_reference="12", tickets=[t1], status=Order_status.ACTIVE)
 
         # Test product getters
@@ -139,7 +139,7 @@ class TestBackEnd(unittest.TestCase):
         o1.set_status(Order_status.CANCELED)
         self.assertEqual(o1.get_status(), Order_status.CANCELED)
         o1.set_status(Order_status.ACTIVE)
-        t2 = Ticket(ticket_id=2, order_id=1, destination=Destination.BAR, status=Ticket_status.PENDING, items=[], comment="second_ticket")
+        t2 = Ticket(ticket_id=2, order_id=1, destination=Destination.BAR, status=Ticket_status.PENDING, items=[], comment="second_ticket", creator="test_creator")
         o1.add_ticket(t2)
         self.assertEqual(len(o1.get_tickets()), 2)
         return
@@ -202,14 +202,14 @@ class TestBackEnd(unittest.TestCase):
         self.assertEqual(response_body["message"], "Order with ID 0 status changed to Order_status.CANCELED.")
 
         # 6. Add ticket to order (non-existing order)
-        new_ticket = Ticket(ticket_id=0, order_id=1, destination=Destination.KITCHEN, items=[])
+        new_ticket = Ticket(ticket_id=0, order_id=1, destination=Destination.KITCHEN, items=[], creator="test_creator")
         response = requests.post(f"{base_url}/add_ticket_to_order", params={"ticket": new_ticket.serialize()})
         self.assertEqual(response.status_code, 200)
         response_body = response.json()
         self.assertEqual(response_body["error"], "Order with ID 1 not found.")
 
         # 7. Add ticket to order (existing order)
-        new_ticket = Ticket(ticket_id=0, order_id=0, destination=Destination.KITCHEN, items=[])
+        new_ticket = Ticket(ticket_id=0, order_id=0, destination=Destination.KITCHEN, items=[], creator="test_creator")
         response = requests.post(f"{base_url}/add_ticket_to_order", params={"ticket": new_ticket.serialize()})
         self.assertEqual(response.status_code, 200)
         response_body = response.json()

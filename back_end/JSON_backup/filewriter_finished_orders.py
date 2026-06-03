@@ -13,6 +13,13 @@ class Filewriter_finished_orders(JSON_Filewriter):
         super().__init__(file_path)
 
     def get_order_by_id(self, order_id: int) -> Order | None:
+        """
+        Retrieves an order from the "finished_orders.json" file by its ID.
+        Args:
+            order_id (int): The ID of the order to be retrieved.
+        Returns:
+            Order | None: The order if found, None otherwise.
+        """
         orders: list[Order] = self.read_everything_from_file(Order)
         if orders is None:
             return None
@@ -25,7 +32,7 @@ class Filewriter_finished_orders(JSON_Filewriter):
 
     def remove_order_by_id(self, order_id: int) -> bool:
         """
-        Removes an order from the "orders.json" file by its ID.
+        Removes an order from the "finished_orders.json" file by its ID.
 
         Args:
             order_id (int): The ID of the order to be removed.
@@ -50,7 +57,7 @@ class Filewriter_finished_orders(JSON_Filewriter):
     
     def add_order(self, order: Order) -> None:
         """
-        Adds a new order to the "orders.json" file.
+        Adds a new order to the "finished_orders.json" file.
 
         Args:
             order (Order): The order to be added.

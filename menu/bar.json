@@ -1,0 +1,69 @@
+{
+    "destination": "bar",
+    "products": [
+        {
+            "product_id": 4,
+            "name": "Plat water",
+            "price": 2.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 5,
+            "name": "Cola",
+            "price": 2.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 6,
+            "name": "Grimbergen blond",
+            "price": 4.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 7,
+            "name": "Fles plat water",
+            "price": 8.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 8,
+            "name": "Fanta",
+            "price": 2.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 9,
+            "name": "Cola-zero",
+            "price": 2.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 10,
+            "name": "Iced-tea",
+            "price": 2.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 11,
+            "name": "Cava",
+            "price": 3.5,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        }
+    ]
+}

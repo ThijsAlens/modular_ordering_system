@@ -41,11 +41,11 @@ if [ "$1" == "dev" ]; then
 
     # Start backend server in background with hot-reload
     echo "Starting backend server (dev) on http://127.0.0.1:8000..."
-    uvicorn back_end.REST_API.main:back_end --reload --port 8000 &
+    uvicorn back_end.REST_API.main:back_end --reload --host 0.0.0.0 --port 8000 &
 
     # Start front_end server in background with hot-reload on a different port
     echo "Starting front_end server (dev) on http://127.0.0.1:9000..."
-    uvicorn front_end.REST_API.main:front_end --reload --port 9000 &
+    uvicorn front_end.REST_API.main:front_end --reload --host 0.0.0.0 --port 9000 &
 
     echo "---------------------------------------------------"
     echo "Both servers running. Press Ctrl+C to stop them all."

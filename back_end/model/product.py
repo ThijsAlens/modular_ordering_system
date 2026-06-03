@@ -26,8 +26,8 @@ class Product(BaseModel):
             "product_id": self.product_id,
             "name": self.name,
             "price": self.price,
-            "destination": self.destination.name,
-            "group": self.group.name,
+            "destination": self.destination,
+            "group": self.group,
             "is_active": self.is_active
         }
     

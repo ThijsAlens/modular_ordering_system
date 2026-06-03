@@ -1,0 +1,37 @@
+{
+    "destination": "kitchen",
+    "products": [
+        {
+            "product_id": 0,
+            "name": "Vol-au-vent",
+            "price": 24.0,
+            "destination": "kitchen",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 1,
+            "name": "Stoofvlees",
+            "price": 26.0,
+            "destination": "kitchen",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 2,
+            "name": "Kinder vol-au-vent",
+            "price": 17.5,
+            "destination": "kitchen",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 3,
+            "name": "Kinder stoofvlees",
+            "price": 19.0,
+            "destination": "kitchen",
+            "group": "no_group",
+            "is_active": true
+        }
+    ]
+}

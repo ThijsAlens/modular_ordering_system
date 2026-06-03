@@ -18,6 +18,16 @@ class JSON_Filewriter(ABC):
         self._file_path: Path = Path(file_path)
         self._lock: threading.Lock = threading.Lock()
 
+    def clear_file(self) -> None:
+        """
+        Clears the content of the file.
+
+        Returns:
+            None
+        """
+        with self._lock:
+            self._file_path.write_text("[]")
+        return
 
     def append_to_file(self, data: list[object], truncate: bool = False) -> None:
         """
@@ -46,7 +56,7 @@ class JSON_Filewriter(ABC):
         Reads JSON data from a file.
         
         Args:
-            None
+            object_class (type): The class of the objects to be deserialized. This class must have a deserialize() method that takes a dictionary and returns an instance of the class.
 
         Returns:
             str: The JSON data read from the file, or None if an error occurred.

@@ -1,7 +1,9 @@
 
 
 from back_end.JSON_filewriter.JSON_filewriter import JSON_Filewriter
+from back_end.enums.destination import Destination
 from back_end.model.order import Order
+from back_end.model.ticket import Ticket
 
 
 class Filewriter_orders(JSON_Filewriter):
@@ -65,3 +67,40 @@ class Filewriter_orders(JSON_Filewriter):
         curr_orders.sort(key=lambda order: order.get_order_id())
         self.append_to_file(curr_orders, truncate=True)
         return
+    
+    def get_ticket_by_ids(self, order_id: int, ticket_id: int) -> Ticket | None:
+        orders: list[Order] = self.read_everything_from_file(Order)
+        for order in orders:
+            if order.get_order_id() == order_id:
+                for ticket in order.get_tickets():
+                    if ticket.get_ticket_id() == ticket_id:
+                        return ticket
+        return None
+    
+    def update_ticket_by_ids(self, order_id: int, ticket_id: int, ticket: Ticket) -> Order | None:
+        orders: list[Order] = self.read_everything_from_file(Order)
+        for order in orders:
+            if order.get_order_id() == order_id:
+                for idx, existing_ticket in enumerate(order.get_tickets()):
+                    if existing_ticket.get_ticket_id() == ticket_id:
+                        order.get_tickets()[idx] = ticket
+                        return order
+        return None
+    
+    def get_all_pending_tickets(self) -> list[Ticket]:
+        orders: list[Order] = self.read_everything_from_file(Order)
+        pending_tickets: list[Ticket] = []
+        for order in orders:
+            for ticket in order.get_tickets():
+                if ticket.get_status() == "pending":
+                    pending_tickets.append(ticket)
+        return pending_tickets
+    
+    def get_all_pending_tickets_by_destination(self, destination: Destination) -> list[Ticket]:
+        orders: list[Order] = self.read_everything_from_file(Order)
+        pending_tickets: list[Ticket] = []
+        for order in orders:
+            for ticket in order.get_tickets():
+                if ticket.get_status() == "pending" and ticket.get_destination() == destination:
+                    pending_tickets.append(ticket)
+        return pending_tickets

@@ -26,13 +26,13 @@ class Order(BaseModel):
             "table_reference": self.table_reference,
             "time_at_creation": self.time_at_creation.isoformat(),
             "tickets": [ticket.serialize() for ticket in self.tickets],
-            "status": self.status.name
+            "status": self.status
         }
     
     @staticmethod
     def deserialize(data: dict):
         tickets = [Ticket.deserialize(ticket_data) for ticket_data in data["tickets"]]
-        return Order(order_id=data["order_id"], table_reference=data["table_reference"], time_at_creation=datetime.fromisoformat(data["time_at_creation"]), tickets=tickets, status=Order_status[data["status"]])
+        return Order(order_id=data["order_id"], table_reference=data["table_reference"], time_at_creation=datetime.fromisoformat(data["time_at_creation"]), tickets=tickets, status=data["status"])
     
     """
     The nessecairy getters and setters

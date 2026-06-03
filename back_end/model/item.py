@@ -5,7 +5,7 @@ from back_end.model.product import Product
 
 class Item(BaseModel):
     """
-    An "Item" is a specific product that has been selected for an order, along with any special instructions or comments.
+    An "Item" is a specific product that has been selected for a ticket, along with any special instructions or comments.
     """
     product: Product
     comment: str = ""
@@ -19,7 +19,7 @@ class Item(BaseModel):
     
     def serialize(self) -> dict:
         return {
-            "product": self.product,
+            "product": self.product.serialize(),
             "comment": self.comment
         }
     
@@ -29,15 +29,10 @@ class Item(BaseModel):
 
 
     """
-    The nessecairy getters and setters
+    The necessary getters and setters
     """
     def get_product(self) -> Product:
         return self.product
     
     def get_comment(self) -> str:
         return self.comment
-
-    def set_comment(self, comment: str) -> None:
-        self.comment = comment
-        return
-    
