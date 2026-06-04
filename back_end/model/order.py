@@ -1,5 +1,5 @@
 from datetime import datetime
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from back_end.model.ticket import Ticket
 from back_end.enums.order_status import Order_status
@@ -11,7 +11,7 @@ class Order(BaseModel):
     
     order_id: int
     table_reference: str
-    time_at_creation: datetime = datetime.now()
+    time_at_creation: datetime = Field(default_factory=datetime.now)
     tickets: list[Ticket] = []
     status: Order_status = Order_status.ACTIVE
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul><li><strong><a href="/waiter_home" class="secondary">Waiter: {{username}}</a></strong></li></ul>
+            <ul><li><a href="/" class="secondary">Back to Hub</a></li></ul>
+        </nav>
+
+        <hr>
+
+        <section>
+            <p><strong>Select the destination for the new ticket:</strong></p>
+            <div class="grid" style="margin-bottom: 20px;">
+                <a href="/ticket_edit?order_id={{order_id}}&destination=kitchen" role="button">Kitchen</a>
+            </div>
+            <div class="grid" style="margin-bottom: 20px;">
+                <a href="/ticket_edit?order_id={{order_id}}&destination=bar" role="button">Bar</a>
+            </div>
+            <div class="grid" style="margin-bottom: 20px;">
+                <a href="/ticket_edit?order_id={{order_id}}&destination=dessert" role="button">Dessert</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

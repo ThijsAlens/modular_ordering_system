@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul><li><strong><a href="/waiter_home" class="secondary">Waiter: {{username}}</a></strong></li></ul>
+            <ul><li><a href="/" class="secondary">Back to Hub</a></li></ul>
+        </nav>
+
+        <hr>
+
+        <section>
+            <div style="margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 2px solid var(--pico-muted-border-color); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                    <div><small><strong>Order ID</strong></small></div>
+                    <div style="text-align: right;"><small><strong>Table reference</strong></small></div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <div>{{order_id}}</div>
+                    <div id="display-table-reference" style="text-align: right;">Loading...</div>
+                </div>
+            </div>
+            
+            <input type="hidden" id="hidden-order-id" value="{{order_id}}">
+            <input type="hidden" id="hidden-ticket-id" value="{{ticket_id}}">
+            <input type="hidden" id="hidden-destination" value="{{destination}}">
+            <input type="hidden" id="hidden-username" value="{{username}}">
+
+            <h3>Items</h3>
+
+            <figure>
+                <table role="grid">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tickets-table-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center;">Loading items...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+
+            <button id="save-ticket_save-button" onclick="saveTicket_saveButton()" style="margin-top: 1rem;">Save ticket</button>
+
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', path='/js/api/menu.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/api/ticket.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/api/order.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/ticket_edit.js') }}"></script>
+
+</body>
+</html>

@@ -92,12 +92,12 @@ def change_order_status(order_id: int, new_status: Order_status):
 #         Ticket handeling          #
 # --------------------------------- #
 @back_end.post("/create_new_ticket")
-def create_new_ticket(order_id: int, destination: Destination, items: list[Item], comment: str = "", creator: str = ""):
+def create_new_ticket(order_id: int, destination: Destination, items: list[Item], comment: str = "", last_editor: str = ""):
     LOGGER.info(f"Handeling \"create_new_empty_ticket\" request")
     order: Order = Order.deserialize(get_order_by_id(order_id))
     
     new_ticket_id = FILEMANAGER_SEQUENCE.get_next_ticket_id()
-    new_ticket = Ticket(ticket_id=new_ticket_id, order_id=order_id, destination=destination, items=items, comment=comment, creator=creator)
+    new_ticket = Ticket(ticket_id=new_ticket_id, order_id=order_id, destination=destination, items=items, comment=comment, last_editor=last_editor)
     
     order.get_tickets().append(new_ticket)
     FILEMANAGER_ORDERS.remove_order_by_id(order.get_order_id())
@@ -105,6 +105,7 @@ def create_new_ticket(order_id: int, destination: Destination, items: list[Item]
 
     return new_ticket.serialize()
 
+@back_end.get("/get_ticket_by_ids")
 def get_ticket_by_ids(order_id: int, ticket_id: int):
     LOGGER.info(f"Handeling \"get_ticket_by_ids\" request for order ID: {order_id} and ticket ID: {ticket_id}")
     order: Order | None = FILEMANAGER_ORDERS.get_order_by_id(order_id)
@@ -119,8 +120,8 @@ def get_ticket_by_ids(order_id: int, ticket_id: int):
     LOGGER.error(f"Ticket with ID {ticket_id} not found in order with ID {order_id}.")
     raise HTTPException(status_code=404, detail=f"Ticket with ID {ticket_id} not found in order with ID {order_id}.")
 
-@back_end.post("/update_items_in_ticket_by_ids")
-def update_items_in_ticket_by_ids(order_id: int, ticket_id: int, new_items: list[Item]):
+@back_end.post("/update_ticket_by_ids")
+def update_ticket_by_ids(order_id: int, ticket_id: int, new_items: list[Item], new_comment: str = "", last_editor: str = ""):
     LOGGER.info(f"Handeling \"update_items_in_ticket_by_id\" request for ticket ID: {ticket_id}")
     ticket: Ticket | None = FILEMANAGER_ORDERS.get_ticket_by_ids(order_id, ticket_id)
     if ticket is None:
@@ -128,6 +129,8 @@ def update_items_in_ticket_by_ids(order_id: int, ticket_id: int, new_items: list
         raise HTTPException(status_code=404, detail=f"Combination of order ID {order_id} and ticket ID {ticket_id} not found.")
     
     ticket.set_items(new_items)
+    ticket.set_comment(new_comment)
+    ticket.set_last_editor(last_editor)
 
     # Update the order that contains this ticket
     order: Order | None = FILEMANAGER_ORDERS.update_ticket_by_ids(order_id, ticket_id, ticket)

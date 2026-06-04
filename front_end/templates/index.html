@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>MOS</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <h1 style="text-align: center;">Welcome, {{ username }}!</h1>
+        <p style="text-align: center;">Select your role.</p>
+
+        <div class="grid" style="margin-bottom: 20px;">
+            <a href="/waiter_home" role="button">Waiter</a>
+        </div>
+        <div class="grid" style="margin-bottom: 20px;">
+            <a href="/kitchen_home" role="button">Kitchen</a>
+        </div>
+        <div class="grid" style="margin-bottom: 20px;">
+            <a href="/bar_home" role="button">Bar</a>
+        </div>
+        <div class="grid" style="margin-bottom: 20px;">
+            <a href="/dessert_home" role="button">Desserts</a>
+        </div>
+        <div class="grid" style="margin-bottom: 20px;">
+            <a href="/checkout_home" role="button">Checkout</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="/logout" role="button" class="secondary">Logout</a>
+        </div>
+    </main>
+</body>
+</html>

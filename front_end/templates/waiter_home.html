@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li>
+                    <strong>
+                        Waiter: {{username}}
+                    </strong>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="/" class="secondary">
+                        Choose role
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <hr>
+
+        <section>
+            <h2>Find existing order</h2>
+            <div class="grid">
+                <div>
+                    <label for="find-order_search-type">Search by:</label>
+                    <select id="find-order_search-type">
+                        <option value="table-reference">Table reference</option>
+                        <option value="order-id">Order ID</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="find-order_search-value">Enter table reference or order ID:</label>
+                    <input type="text" id="find-order_search-value" placeholder="e.g., 5a or 12" required>
+                </div>
+            </div>
+        </section>
+        <button id="find-order_search-button" onclick="findOrder_searchButton()" class="secondary">Search order</button>
+        <p id="find-order_error-message" style="color: red; margin-top: 10px;"></p>
+
+        <hr>
+
+        <section>
+            <h2>Create new order</h2>
+            <div class="grid">
+                <div>
+                    <label for="create-order_table-reference">Table reference:</label>
+                    <input type="text" id="create-order_table-reference" placeholder="e.g., 5a" required>
+                </div>
+            </div>
+            
+            <button id="create-order_create-button" onclick="createOrder_createButton() "class="secondary">Start new order</button>
+            <p id="create-order_error-message" style="color: red; margin-top: 10px;"></p>
+        </section>
+
+        
+    </main>
+
+    <script src="{{ url_for('static', path='/js/api/order.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/waiter_home.js') }}"></script>
+</body>
+</html>

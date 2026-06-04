@@ -1,6 +1,6 @@
 from datetime import datetime
 import logging
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from back_end.enums.destination import Destination
 from back_end.enums.ticket_status import Ticket_status
@@ -17,14 +17,14 @@ class Ticket(BaseModel):
     status: Ticket_status = Ticket_status.PENDING
     items: list[Item] = []
     comment: str = ""
-    time_at_creation: datetime = datetime.now()
-    creator: str = ""
+    time_at_creation: datetime = Field(default_factory=datetime.now)
+    last_editor: str = ""
 
     def __str__(self) -> str:
         items_str = ", ".join(str(item) for item in self.items)
         return (f"Ticket(ticket_id={self.ticket_id}, order_id={self.order_id}, status={self.status}, "
                 f"destination={self.destination}, items=[{items_str}], comment='{self.comment}', "
-                f"time_at_creation={self.time_at_creation}, creator={self.creator})")
+                f"time_at_creation={self.time_at_creation}, last_editor={self.last_editor})")
     
     def serialize(self) -> dict:
         return {
@@ -35,13 +35,13 @@ class Ticket(BaseModel):
             "items": [item.serialize() for item in self.items],
             "comment": self.comment,
             "time_at_creation": self.time_at_creation.isoformat(),
-            "creator": self.creator
+            "last_editor": self.last_editor
         }
     
     @staticmethod
     def deserialize(data: dict):
         items = [Item.deserialize(item_data) for item_data in data["items"]]
-        return Ticket(ticket_id=data["ticket_id"], order_id=data["order_id"], destination=data["destination"], status=data["status"], items=items, comment=data["comment"], time_at_creation=datetime.fromisoformat(data["time_at_creation"]), creator=data["creator"])
+        return Ticket(ticket_id=data["ticket_id"], order_id=data["order_id"], destination=data["destination"], status=data["status"], items=items, comment=data["comment"], time_at_creation=datetime.fromisoformat(data["time_at_creation"]), last_editor=data["last_editor"])
     
     """
     The nessecairy getters and setters
@@ -80,8 +80,12 @@ class Ticket(BaseModel):
     def get_time_at_creation(self) -> datetime:
         return self.time_at_creation
 
-    def get_creator(self) -> str:
-        return self.creator
+    def get_last_editor(self) -> str:
+        return self.last_editor
+
+    def set_last_editor(self, last_editor: str) -> None:
+        self.last_editor = last_editor
+        return
     
     """
     Other methods

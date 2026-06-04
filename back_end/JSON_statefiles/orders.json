@@ -1,1 +1,161 @@
-[]
+[
+    {
+        "order_id": 0,
+        "table_reference": "5a",
+        "time_at_creation": "2026-06-04T09:10:22.805625",
+        "tickets": [
+            {
+                "ticket_id": 0,
+                "order_id": 0,
+                "status": "pending",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Vol-au-vent",
+                            "price": 24.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Vol-au-vent",
+                            "price": 24.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 3,
+                            "name": "Kinder stoofvlees",
+                            "price": 19.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-06-04T09:10:34.072884",
+                "last_editor": "Jean-claude"
+            },
+            {
+                "ticket_id": 1,
+                "order_id": 0,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 4,
+                            "name": "Plat water",
+                            "price": 2.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 4,
+                            "name": "Plat water",
+                            "price": 2.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 6,
+                            "name": "Grimbergen blond",
+                            "price": 4.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 10,
+                            "name": "Iced-tea",
+                            "price": 2.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-06-04T09:11:10.632039",
+                "last_editor": "Jean-claude"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 1,
+        "table_reference": "4",
+        "time_at_creation": "2026-06-04T09:11:48.494106",
+        "tickets": [
+            {
+                "ticket_id": 2,
+                "order_id": 1,
+                "status": "pending",
+                "destination": "dessert",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 12,
+                            "name": "Tiramisu",
+                            "price": 7.5,
+                            "destination": "dessert",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 12,
+                            "name": "Tiramisu",
+                            "price": 7.5,
+                            "destination": "dessert",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 13,
+                            "name": "Dame blanche",
+                            "price": 6.0,
+                            "destination": "dessert",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-06-04T09:11:57.516517",
+                "last_editor": "Joske"
+            }
+        ],
+        "status": "active"
+    }
+]
