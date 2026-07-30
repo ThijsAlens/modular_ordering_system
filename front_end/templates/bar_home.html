@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS | {{username}} - {{role}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul><li><strong><a href="/{{role.lower()}}_home" class="secondary">{{role}}: {{username}}</a></strong></li></ul>
+            <ul><li><a href="/" class="secondary">Change role</a></li></ul>
+        </nav>
+
+        <hr>
+
+        <p><strong>Pending Tickets</strong></p>
+
+        <figure>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Last editor</th>
+                        <th scope="col">View/edit</th>
+                        <th scope="col">Complete</th>
+                    </tr>
+                </thead>
+                <tbody id="pending-tickets_table-body">
+                    <tr>
+                        <td colspan="4" style="text-align: center;">Loading pending tickets...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+
+        <hr>
+
+        <p><strong>Completed Tickets</strong></p>
+        <figure>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Last editor</th>
+                        <th scope="col">View/edit</th>
+                        <th scope="col">Reopen</th>
+                    </tr>
+                </thead>
+                <tbody id="completed-tickets-table-body">
+                    <tr>
+                        <td colspan="4" style="text-align: center;">Loading completed tickets...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    </main>
+
+    <script src="{{ url_for('static', path='/js/api/main.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/api/order.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/api/ticket.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/bar_home.js') }}"></script>
+
+</body>
+</html>

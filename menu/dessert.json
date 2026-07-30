@@ -1,0 +1,61 @@
+{
+    "destination": "dessert",
+    "products": [
+        {
+            "product_id": 26,
+            "name": "Koffie",
+            "price": 2.5,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 27,
+            "name": "Deca",
+            "price": 2.5,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 28,
+            "name": "Thee",
+            "price": 2.5,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 29,
+            "name": "Br\u00e9silliennetaart",
+            "price": 4.0,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 30,
+            "name": "Fruittaart",
+            "price": 4.0,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 31,
+            "name": "Kinderijsje",
+            "price": 5.0,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 32,
+            "name": "Dame blanche",
+            "price": 7.0,
+            "destination": "dessert",
+            "group": "no_group",
+            "is_active": true
+        }
+    ]
+}

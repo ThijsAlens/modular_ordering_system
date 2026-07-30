@@ -3,32 +3,40 @@
     "products": [
         {
             "product_id": 0,
-            "name": "Vol-au-vent",
-            "price": 24.0,
+            "name": "Mosselen natuur",
+            "price": 28.0,
             "destination": "kitchen",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 1,
-            "name": "Stoofvlees",
-            "price": 26.0,
+            "name": "Kinderportie mosselen",
+            "price": 16.0,
             "destination": "kitchen",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 2,
-            "name": "Kinder vol-au-vent",
-            "price": 17.5,
+            "name": "Vlees schotel",
+            "price": 20.0,
             "destination": "kitchen",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 3,
-            "name": "Kinder stoofvlees",
-            "price": 19.0,
+            "name": "Noorse schotel",
+            "price": 25.0,
+            "destination": "kitchen",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 4,
+            "name": "Portie friet",
+            "price": 2.5,
             "destination": "kitchen",
             "group": "no_group",
             "is_active": true

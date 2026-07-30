@@ -1,1 +1,117 @@
-[]
+[
+    {
+        "order_id": 0,
+        "table_reference": "19",
+        "time_at_creation": "2026-07-26T11:12:45.180063",
+        "tickets": [
+            {
+                "ticket_id": 2,
+                "order_id": 0,
+                "status": "pending",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:23:59.529191",
+                "last_editor": "Thijs"
+            }
+        ],
+        "status": "payed"
+    },
+    {
+        "order_id": 3,
+        "table_reference": "17",
+        "time_at_creation": "2026-07-26T11:24:09.348427",
+        "tickets": [
+            {
+                "ticket_id": 3,
+                "order_id": 3,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 11,
+                            "name": "Grimbergen donker",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 16,
+                            "name": "Ice-tea",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:24:24.615232",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 5,
+                "order_id": 3,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:30:10.771351",
+                "last_editor": "Thijs"
+            }
+        ],
+        "status": "payed"
+    }
+]

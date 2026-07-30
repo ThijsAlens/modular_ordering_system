@@ -22,7 +22,7 @@ async function findOrder_searchButton() {
             if (orders.length === 1) {
                 window.location.href = `/order_edit?order_id=${orders[0].order_id}`;
             } else {
-                window.location.href = `/order_choose-from-same-table-reference?table-reference=${searchValue}`;
+                window.location.href = `/order_choose-from-same-table-reference?table_reference=${searchValue}`;
             }
         }
         if (searchType === "order-id") {
@@ -51,6 +51,7 @@ async function createOrder_createButton() {
     try {
         const new_order = await createNewOrder(tableReference);
         window.location.href = `/order_edit?order_id=${new_order.order_id}`;
+        alert(`New order created with ID: ${new_order.order_id}`);
     } catch (error) {
         messageEl.innerText = error.message || "Network error: Could not connect to the server.";
     }

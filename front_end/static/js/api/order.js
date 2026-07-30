@@ -1,5 +1,4 @@
 // This file contains the JS code for everything to do with handeling orders with the backend
-const BACKEND_URL = "http://192.168.0.143:8000";
 
 /**
  * Fetches a single order by its ID.
@@ -50,5 +49,18 @@ async function createNewOrder(tableRef) {
     
     return await response.json();
  }
+
+ async function changeOrderStatusById(orderId, newStatus) {
+    const response = await fetch(`${BACKEND_URL}/change_order_status_by_id?order_id=${orderId}&new_status=${newStatus}`, {
+        method: "POST",
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || "Failed to change order status.");
+    }
+
+    return await response.json();
+}
 
 

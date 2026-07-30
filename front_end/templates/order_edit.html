@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOS</title>
+    <title>MOS | {{username}} - {{role}}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 <body>
     <main class="container">
         <nav>
-            <ul><li><strong><a href="/waiter_home" class="secondary">Waiter: {{username}}</a></strong></li></ul>
-            <ul><li><a href="/" class="secondary">Back to Hub</a></li></ul>
+            <ul><li><strong><a href="/{{role.lower()}}_home" class="secondary">{{role}}: {{username}}</a></strong></li></ul>
+            <ul><li><a href="/" class="secondary">Change role</a></li></ul>
         </nav>
 
         <hr>
@@ -29,7 +29,7 @@
             
             <input type="hidden" id="hidden-order-id" value="{{order_id}}">
 
-            <h3>Tickets</h3>
+            <p><strong>Tickets</strong></p>
 
             <figure>
                 <table role="grid">
@@ -52,6 +52,7 @@
 
     </main>
 
+    <script src="{{ url_for('static', path='/js/api/main.js') }}"></script>
     <script src="{{ url_for('static', path='/js/api/order.js') }}"></script>
     <script src="{{ url_for('static', path='/js/order_edit.js') }}"></script>
 </body>

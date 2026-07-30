@@ -25,12 +25,27 @@ async function createNewTicket(orderId, destination, items, comment, lastEditor)
 }
 
 async function updateTicketByIds(orderId, ticketId, newItems, newComment, lastEditor) {
-    const url = `${BACKEND_URL}/update_ticket_by_ids?order_id=${orderId}&ticket_id=${ticketId}&new_comment=${newComment}&last_editor=${lastEditor}`;
+    const origResponse = await fetch(`${BACKEND_URL}/get_ticket_by_ids?order_id=${orderId}&ticket_id=${ticketId}`, {
+        method: "GET"
+    });
+    
+    if (!origResponse.ok) {
+        const errorData = await origResponse.json();
+        throw new Error(errorData.detail || "Failed to fetch original ticket.");
+    }
+    
+    const ticketToUpdate = await origResponse.json();
+
+    ticketToUpdate.items = newItems;
+    ticketToUpdate.comment = newComment;
+    ticketToUpdate.last_editor = lastEditor;
+
+    const url = `${BACKEND_URL}/update_ticket`;
     
     const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newItems)
+        body: JSON.stringify(ticketToUpdate)
     });
 
     if (!response.ok) {
@@ -49,6 +64,45 @@ async function getTicketByIds(orderId, ticketId) {
     if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.detail || "Failed to fetch ticket.");
+    }
+
+    return await response.json();
+}
+
+async function getAllPendingTicketsByDestination(destination) {
+    const response = await fetch(`${BACKEND_URL}/get_all_pending_tickets_by_destination?destination=${destination}`, {
+        method: "GET",
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || "Failed to fetch pending tickets.");
+    }
+
+    return await response.json();
+}
+
+async function getAllCompletedTicketsByDestination(destination) {
+    const response = await fetch(`${BACKEND_URL}/get_all_completed_tickets_by_destination?destination=${destination}`, {
+        method: "GET",
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || "Failed to fetch completed tickets.");
+    }
+
+    return await response.json();
+}
+
+async function changeTicketStatusByIds(orderId, ticketId, newStatus) {
+    const response = await fetch(`${BACKEND_URL}/change_ticket_status_by_ids?order_id=${orderId}&ticket_id=${ticketId}&status=${newStatus}`, {
+        method: "POST",
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || "Failed to change ticket status.");
     }
 
     return await response.json();

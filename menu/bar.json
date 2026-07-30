@@ -2,65 +2,169 @@
     "destination": "bar",
     "products": [
         {
-            "product_id": 4,
-            "name": "Plat water",
-            "price": 2.0,
-            "destination": "bar",
-            "group": "no_group",
-            "is_active": true
-        },
-        {
             "product_id": 5,
-            "name": "Cola",
-            "price": 2.0,
+            "name": "Maes Pils",
+            "price": 2.8,
             "destination": "bar",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 6,
-            "name": "Grimbergen blond",
-            "price": 4.0,
+            "name": "Carlsberg 0.0%",
+            "price": 2.8,
             "destination": "bar",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 7,
-            "name": "Fles plat water",
-            "price": 8.0,
+            "name": "Hoegaarden",
+            "price": 3.5,
             "destination": "bar",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 8,
-            "name": "Fanta",
-            "price": 2.0,
+            "name": "Sportzot",
+            "price": 4.5,
             "destination": "bar",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 9,
-            "name": "Cola-zero",
-            "price": 2.0,
+            "name": "Duvel",
+            "price": 4.5,
             "destination": "bar",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 10,
-            "name": "Iced-tea",
-            "price": 2.0,
+            "name": "Grimbergen blond",
+            "price": 4.5,
             "destination": "bar",
             "group": "no_group",
             "is_active": true
         },
         {
             "product_id": 11,
-            "name": "Cava",
-            "price": 3.5,
+            "name": "Grimbergen donker",
+            "price": 4.5,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 12,
+            "name": "Water - natuur",
+            "price": 2.8,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 13,
+            "name": "Fles water - natuur",
+            "price": 10.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 14,
+            "name": "Water - bruis",
+            "price": 2.8,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 15,
+            "name": "Fles water - bruis",
+            "price": 10.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 16,
+            "name": "Ice-tea",
+            "price": 2.8,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 17,
+            "name": "Cola",
+            "price": 2.8,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 18,
+            "name": "Cola-zero",
+            "price": 2.8,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 19,
+            "name": "Limonade",
+            "price": 2.8,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 20,
+            "name": "Glas wit",
+            "price": 4.5,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 21,
+            "name": "Fles witte wijn",
+            "price": 18.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 22,
+            "name": "Glas Ros\u00e9",
+            "price": 4.5,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 23,
+            "name": "Fles ros\u00e9 wijn",
+            "price": 18.0,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 24,
+            "name": "Glas Rode wijn",
+            "price": 4.5,
+            "destination": "bar",
+            "group": "no_group",
+            "is_active": true
+        },
+        {
+            "product_id": 25,
+            "name": "Fles rode wijn",
+            "price": 18.0,
             "destination": "bar",
             "group": "no_group",
             "is_active": true

@@ -104,3 +104,12 @@ class Filewriter_orders(JSON_Filewriter):
                 if ticket.get_status() == "pending" and ticket.get_destination() == destination:
                     pending_tickets.append(ticket)
         return pending_tickets
+
+    def get_all_completed_tickets_by_destination(self, destination: Destination) -> list[Ticket]:
+        orders: list[Order] = self.read_everything_from_file(Order)
+        completed_tickets: list[Ticket] = []
+        for order in orders:
+            for ticket in order.get_tickets():
+                if ticket.get_status() == "completed" and ticket.get_destination() == destination:
+                    completed_tickets.append(ticket)
+        return completed_tickets

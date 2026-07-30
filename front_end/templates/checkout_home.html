@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS | {{username}} - {{role}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul><li><strong><a href="/{{role.lower()}}_home" class="secondary">{{role}}: {{username}}</a></strong></li></ul>
+            <ul><li><a href="/" class="secondary">Change role</a></li></ul>
+        </nav>
+
+        <hr>
+
+        <p><strong>Search order ID</strong></p>
+        <div>
+            <label for="find-order_search-value">Enter Order ID:</label>
+            <input type="text" id="find-order_search-value" placeholder="e.g., 5a or 12" required>
+        </div>
+        <button id="find-order_search-button" onclick="findOrder_searchButton()" class="secondary">Search order</button>
+        <p id="find-order_error-message" style="color: red; margin-top: 10px;"></p>
+
+        <hr>
+        <p><strong>Current selected order</strong></p>
+
+        <div id="current-order-details">
+            <p>No order selected.</p>
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', path='/js/api/main.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/api/order.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/checkout_home.js') }}"></script>
+</body>
+</html>

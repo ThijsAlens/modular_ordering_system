@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOS</title>
+    <title>MOS | {{username}} - {{role}}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 <body>
     <main class="container">
         <nav>
-            <ul><li><strong><a href="/waiter_home" class="secondary">Waiter: {{username}}</a></strong></li></ul>
-            <ul><li><a href="/" class="secondary">Back to Hub</a></li></ul>
+            <ul><li><strong><a href="/{{role.lower()}}_home" class="secondary">{{role}}: {{username}}</a></strong></li></ul>
+            <ul><li><a href="/" class="secondary">Change role</a></li></ul>
         </nav>
 
         <hr>
@@ -26,11 +26,13 @@
                     <div id="display-table-reference" style="text-align: right;">Loading...</div>
                 </div>
             </div>
+            <div><small><strong id="completed?" style="color: rgb(218, 141, 0); margin-top: 10px;"></strong></small></div>
             
             <input type="hidden" id="hidden-order-id" value="{{order_id}}">
             <input type="hidden" id="hidden-ticket-id" value="{{ticket_id}}">
             <input type="hidden" id="hidden-destination" value="{{destination}}">
             <input type="hidden" id="hidden-username" value="{{username}}">
+            <input type="hidden" id="hidden-role" value="{{role.lower()}}">
 
             <h3>Items</h3>
 
@@ -49,12 +51,13 @@
                     </tbody>
                 </table>
             </figure>
-
             <button id="save-ticket_save-button" onclick="saveTicket_saveButton()" style="margin-top: 1rem;">Save ticket</button>
-
+            <button id="discard-changes_button" onclick="discardChanges_button()" style="margin-top: 1rem;">Back (discard changes)</button>
+            
         </section>
     </main>
 
+    <script src="{{ url_for('static', path='/js/api/main.js') }}"></script>
     <script src="{{ url_for('static', path='/js/api/menu.js') }}"></script>
     <script src="{{ url_for('static', path='/js/api/ticket.js') }}"></script>
     <script src="{{ url_for('static', path='/js/api/order.js') }}"></script>

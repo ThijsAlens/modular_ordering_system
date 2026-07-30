@@ -46,6 +46,8 @@ def retrieve_cookies(request: Request) -> dict | None:
     if not res["username"] or res["username"] not in config.USERS:
         return None
     
+    res["role"] = request.cookies.get("role")
+    
     return res
 
 # --------------------------------- #
@@ -58,8 +60,12 @@ async def serve_root(request: Request):
         return RedirectResponse(url="/register", status_code=303)
     
     username = retrieved_cookies["username"]
+    role = retrieved_cookies["role"]
+    response = templates.TemplateResponse("index.html", {"request": request, "username": username})
+    if role:
+        response.delete_cookie(key="role")
     
-    return templates.TemplateResponse("index.html", {"request": request, "username": username})
+    return response
 
 # --------------------------------- #
 #      Registration handeling       #
@@ -94,6 +100,7 @@ async def serve_logout(request: Request):
 
     response = RedirectResponse(url="/register", status_code=303)
     response.delete_cookie(key="username")
+    response.delete_cookie(key="role")
 
     return response
 
@@ -108,7 +115,66 @@ async def serve_waiter_home(request: Request):
         return RedirectResponse(url="/register")
     
     username = retrieved_cookies["username"]
-    return templates.TemplateResponse("waiter_home.html", {"request": request, "username": username})
+    response = templates.TemplateResponse("waiter_home.html", {"request": request, "username": username, "role": "waiter"})
+    response.set_cookie(key="role", value="waiter")
+    return response
+
+
+# --------------------------------- #
+#       Kitchen page handeling      #
+# --------------------------------- #
+@front_end.get("/kitchen_home", response_class=HTMLResponse)
+async def serve_kitchen_home(request: Request):
+    retrieved_cookies = retrieve_cookies(request)
+    if not retrieved_cookies:
+        return RedirectResponse(url="/register")
+    
+    username = retrieved_cookies["username"]
+    response = templates.TemplateResponse("kitchen_home.html", {"request": request, "username": username, "role": "kitchen"})
+    response.set_cookie(key="role", value="kitchen")
+    return response
+
+# --------------------------------- #
+#         Bar page handeling        #
+# --------------------------------- #
+@front_end.get("/bar_home", response_class=HTMLResponse)
+async def serve_bar_home(request: Request):
+    retrieved_cookies = retrieve_cookies(request)
+    if not retrieved_cookies:
+        return RedirectResponse(url="/register")
+    
+    username = retrieved_cookies["username"]
+    response = templates.TemplateResponse("bar_home.html", {"request": request, "username": username, "role": "bar"})
+    response.set_cookie(key="role", value="bar")
+    return response
+
+# --------------------------------- #
+#       Dessert page handeling      #
+# --------------------------------- #
+@front_end.get("/dessert_home", response_class=HTMLResponse)
+async def serve_dessert_home(request: Request):
+    retrieved_cookies = retrieve_cookies(request)
+    if not retrieved_cookies:
+        return RedirectResponse(url="/register")
+    
+    username = retrieved_cookies["username"]
+    response = templates.TemplateResponse("dessert_home.html", {"request": request, "username": username, "role": "dessert"})
+    response.set_cookie(key="role", value="dessert")
+    return response
+
+# --------------------------------- #
+#      Checkout page handeling      #
+# --------------------------------- #
+@front_end.get("/checkout_home", response_class=HTMLResponse)
+async def serve_checkout_home(request: Request):
+    retrieved_cookies = retrieve_cookies(request)
+    if not retrieved_cookies:
+        return RedirectResponse(url="/register")
+    
+    username = retrieved_cookies["username"]
+    response = templates.TemplateResponse("checkout_home.html", {"request": request, "username": username, "role": "checkout"})
+    response.set_cookie(key="role", value="checkout")
+    return response
 
 # --------------------------------- #
 #       Order page handeling        #
@@ -120,7 +186,18 @@ async def serve_order_edit(request: Request, order_id: int):
         return RedirectResponse(url="/register")
     
     username = retrieved_cookies["username"]
-    return templates.TemplateResponse("order_edit.html", {"request": request, "username": username, "order_id": order_id})
+    role = retrieved_cookies["role"]
+    return templates.TemplateResponse("order_edit.html", {"request": request, "username": username, "role": role, "order_id": order_id})
+
+@front_end.get("/order_choose-from-same-table-reference", response_class=HTMLResponse)
+async def serve_order_choose_from_same_table_reference(request: Request, table_reference: str):
+    retrieved_cookies = retrieve_cookies(request)
+    if not retrieved_cookies:
+        return RedirectResponse(url="/register")
+    
+    username = retrieved_cookies["username"]
+    role = retrieved_cookies["role"]
+    return templates.TemplateResponse("order_choose_from_same_table_reference.html", {"request": request, "username": username, "role": role, "table_reference": table_reference})
 
 @front_end.get("/choose_from_destination", response_class=HTMLResponse)
 async def serve_choose_destination(request: Request, order_id: int):
@@ -129,7 +206,8 @@ async def serve_choose_destination(request: Request, order_id: int):
         return RedirectResponse(url="/register")
     
     username = retrieved_cookies["username"]
-    return templates.TemplateResponse("choose_from_destination.html", {"request": request, "username": username, "order_id": order_id})
+    role = retrieved_cookies["role"]
+    return templates.TemplateResponse("choose_from_destination.html", {"request": request, "username": username, "role": role, "order_id": order_id})
 
 # --------------------------------- #
 #       Ticket page handeling       #
@@ -141,4 +219,5 @@ async def serve_ticket_edit(request: Request, order_id: int, destination: str, t
         return RedirectResponse(url="/register")
     
     username = retrieved_cookies["username"]
-    return templates.TemplateResponse("ticket_edit.html", {"request": request, "username": username, "order_id": order_id, "ticket_id": ticket_id, "destination": destination})
+    role = retrieved_cookies["role"]
+    return templates.TemplateResponse("ticket_edit.html", {"request": request, "username": username, "role": role, "order_id": order_id, "ticket_id": ticket_id, "destination": destination})

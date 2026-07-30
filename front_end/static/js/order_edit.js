@@ -48,6 +48,16 @@ function renderTickets(order, tbodyEl) {
         return;
     }
 
+    if (tickets.length === 0) {
+        const emptyRow = document.createElement("tr");
+        emptyRow.innerHTML = `
+            <td colspan="4" style="text-align: center; color: gray;">
+                <em>No pending tickets found.</em>
+            </td>`;
+        tbodyEl.appendChild(emptyRow);
+        return;
+    }
+
     // 3. Sort tickets newest first (Descending order by timestamp)
     tickets.sort((a, b) => {
         const timeA = a.time_at_creation ? new Date(a.time_at_creation).getTime() : 0;
@@ -66,7 +76,7 @@ function renderTickets(order, tbodyEl) {
             <td>${ticket.last_editor}</td>
             <td>${ticket.destination}</td>
             <td>
-                <a href="/ticket_edit?order_id=${order.order_id}&ticket_id=${ticket.ticket_id}&destination=${ticket.destination}" class="secondary">View</a>
+                <a href="/ticket_edit?order_id=${order.order_id}&ticket_id=${ticket.ticket_id}&destination=${ticket.destination}" class="secondary">Edit</a>
             </td>
         `;
         

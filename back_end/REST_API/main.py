@@ -12,6 +12,7 @@ from back_end.config import FILEMANAGER_SEQUENCE, LOGGER, FILEMANAGER_ORDERS, FI
 
 from back_end.enums.order_status import Order_status
 from back_end.enums.destination import Destination
+from back_end.enums.ticket_status import Ticket_status
 from back_end.model.item import Item
 from back_end.model.menu import Menu
 from back_end.model.order import Order
@@ -75,7 +76,7 @@ def create_new_order(table_reference: str):
     return new_order.serialize()
 
 @back_end.post("/change_order_status_by_id")
-def change_order_status(order_id: int, new_status: Order_status):
+def change_order_status_by_id(order_id: int, new_status: Order_status):
     """If an order is changed to PAYED, it is backed up to finished_orders.json and removed from orders.json."""
     LOGGER.info(f"Handeling \"change_order_status\" request for order ID: {order_id} to new status: {new_status}")
     order: Order = Order.deserialize(get_order_by_id(order_id))
@@ -120,28 +121,19 @@ def get_ticket_by_ids(order_id: int, ticket_id: int):
     LOGGER.error(f"Ticket with ID {ticket_id} not found in order with ID {order_id}.")
     raise HTTPException(status_code=404, detail=f"Ticket with ID {ticket_id} not found in order with ID {order_id}.")
 
-@back_end.post("/update_ticket_by_ids")
-def update_ticket_by_ids(order_id: int, ticket_id: int, new_items: list[Item], new_comment: str = "", last_editor: str = ""):
-    LOGGER.info(f"Handeling \"update_items_in_ticket_by_id\" request for ticket ID: {ticket_id}")
-    ticket: Ticket | None = FILEMANAGER_ORDERS.get_ticket_by_ids(order_id, ticket_id)
-    if ticket is None:
-        LOGGER.error(f"Combination of order ID {order_id} and ticket ID {ticket_id} not found.")
-        raise HTTPException(status_code=404, detail=f"Combination of order ID {order_id} and ticket ID {ticket_id} not found.")
-    
-    ticket.set_items(new_items)
-    ticket.set_comment(new_comment)
-    ticket.set_last_editor(last_editor)
-
+@back_end.post("/update_ticket")
+def update_ticket(new_ticket: Ticket):
+    LOGGER.info(f"Handeling \"update_items_in_ticket_by_id\" request for ticket ID: {new_ticket.get_ticket_id()}")
     # Update the order that contains this ticket
-    order: Order | None = FILEMANAGER_ORDERS.update_ticket_by_ids(order_id, ticket_id, ticket)
+    order: Order | None = FILEMANAGER_ORDERS.update_ticket_by_ids(new_ticket.get_order_id(), new_ticket.get_ticket_id(), new_ticket)
     if order is None:
-        LOGGER.error(f"Could not update ticket with ID {ticket_id} in order with ID {order_id}.")
-        raise HTTPException(status_code=404, detail=f"Could not update ticket with ID {ticket_id} in order with ID {order_id}.")
+        LOGGER.error(f"Could not update ticket with ID {new_ticket.get_ticket_id()} in order with ID {new_ticket.get_order_id()}.")
+        raise HTTPException(status_code=404, detail=f"Could not update ticket with ID {new_ticket.get_ticket_id()} in order with ID {new_ticket.get_order_id()}.")
     
     FILEMANAGER_ORDERS.remove_order_by_id(order.get_order_id())
     FILEMANAGER_ORDERS.add_order(order)
 
-    return ticket.serialize()
+    return new_ticket.serialize()
 
 @back_end.get("/get_all_pending_tickets_by_destination")
 def get_all_pending_tickets_by_destination(destination: Destination):
@@ -149,6 +141,33 @@ def get_all_pending_tickets_by_destination(destination: Destination):
     pending_tickets = FILEMANAGER_ORDERS.get_all_pending_tickets_by_destination(destination)
     return [ticket.serialize() for ticket in pending_tickets]
 
+@back_end.get("/get_all_completed_tickets_by_destination")
+def get_all_completed_tickets_by_destination(destination: Destination):
+    LOGGER.info(f"Handling \"get_all_completed_tickets_by_destination\" request for destination: {destination}")
+    completed_tickets = FILEMANAGER_ORDERS.get_all_completed_tickets_by_destination(destination)
+    return [ticket.serialize() for ticket in completed_tickets]
+
+
+@back_end.post("/change_ticket_status_by_ids")
+def change_ticket_status_by_ids(order_id: int, ticket_id: int, status: Ticket_status):
+    LOGGER.info(f"Handling \"change_ticket_status_by_ids\" request for order ID: {order_id}, ticket ID: {ticket_id}, and new status: {status}")
+    ticket: Ticket | None = FILEMANAGER_ORDERS.get_ticket_by_ids(order_id, ticket_id)
+    if ticket is None:
+        LOGGER.error(f"Combination of order ID {order_id} and ticket ID {ticket_id} not found.")
+        raise HTTPException(status_code=404, detail=f"Combination of order ID {order_id} and ticket ID {ticket_id} not found.")
+
+    ticket.set_status(status)
+
+    # Update the order that contains this ticket
+    order: Order | None = FILEMANAGER_ORDERS.update_ticket_by_ids(order_id, ticket_id, ticket)
+    if order is None:
+        LOGGER.error(f"Could not update ticket with ID {ticket_id} in order with ID {order_id}.")
+        raise HTTPException(status_code=404, detail=f"Could not update ticket with ID {ticket_id} in order with ID {order_id}.")
+
+    FILEMANAGER_ORDERS.remove_order_by_id(order.get_order_id())
+    FILEMANAGER_ORDERS.add_order(order)
+
+    return ticket.serialize()
 
 # --------------------------------- #
 #        Product handeling          #

@@ -15,18 +15,19 @@
 
         <hr>
 
+        <input type="hidden" id="table_reference" value="{{table_reference}}">
+
         <section>
-            <p><strong>Select the destination for the new ticket:</strong></p>
-            <div class="grid" style="margin-bottom: 20px;">
-                <a href="/ticket_edit?order_id={{order_id}}&destination=kitchen" role="button">Kitchen</a>
-            </div>
-            <div class="grid" style="margin-bottom: 20px;">
-                <a href="/ticket_edit?order_id={{order_id}}&destination=bar" role="button">Bar</a>
-            </div>
-            <div class="grid" style="margin-bottom: 20px;">
-                <a href="/ticket_edit?order_id={{order_id}}&destination=dessert" role="button">Dessert</a>
+            <p><strong>Select the order you want to edit for table {{table_reference}}:</strong></p>
+            
+            <div id="orders-container">
+                <p>Loading orders...</p>
             </div>
         </section>
     </main>
+
+    <script src="{{ url_for('static', path='/js/api/main.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/api/order.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/order_choose_from_same_table_reference.js') }}"></script>
 </body>
 </html>

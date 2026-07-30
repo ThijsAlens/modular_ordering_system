@@ -19,6 +19,8 @@ async function loadPage() {
         let existingTicket = null;
         if (ticketId !== null) {
             existingTicket = await getTicketByIds(orderId, ticketId);
+            document.getElementById("completed?").innerText = existingTicket.status === "completed" ? `This ticket is already completed, make sure to alert the ${destination} of your changes.` : "";
+
         }
 
         renderMenu(loadedMenu, tbodyEl, existingTicket);
@@ -50,6 +52,13 @@ function renderMenu(menu, tbodyEl, existingTicket) {
         ticketQuantities[product.product_id] = startQty;
 
         const row = document.createElement("tr");
+        row.id = `row-${product.product_id}`; // Give the row a unique ID
+        
+        // Apply the highlight immediately if the item is already ordered
+        if (startQty > 0) {
+            row.style.backgroundColor = "rgba(0, 137, 255, 0.1)"; // Subtle blue highlight
+        }
+
         row.innerHTML = `
             <td style="vertical-align: middle;">
                 <strong>${product.name}</strong>
@@ -82,6 +91,32 @@ function changeAmount(productId, change) {
     
     ticketQuantities[productId] = newAmount;
     document.getElementById(`qty-${productId}`).innerText = newAmount;
+
+    // Grab the specific row for this product
+    const rowEl = document.getElementById(`row-${productId}`);
+    
+    // Toggle the background color based on the quantity
+    if (newAmount > 0) {
+        rowEl.style.backgroundColor = "rgba(0, 137, 255, 0.1)"; // Add highlight
+    } else {
+        rowEl.style.backgroundColor = ""; // Remove highlight when back to 0
+    }
+}
+
+async function discardChanges_button() {
+    const userRole = document.getElementById("hidden-role").value.toLowerCase();
+    const orderId = document.getElementById("hidden-order-id").value;
+    if (userRole === "kitchen") {
+        window.location.href = "/kitchen_home";
+    } else if (userRole === "bar") {
+        window.location.href = "/bar_home";
+    } else if (userRole === "dessert") {
+        window.location.href = "/dessert_home";
+    } else if (userRole === "checkout") {
+        window.location.href = "/checkout_home";
+    } else if (userRole === "waiter") {
+        window.location.href = `/order_edit?order_id=${orderId}`;
+    }
 }
 
 async function saveTicket_saveButton() {
@@ -105,7 +140,7 @@ async function saveTicket_saveButton() {
             if (qty > 0) {
                 const noteInput = document.getElementById(`comment-${productId}`);
                 const itemComment = noteInput ? noteInput.value.trim() : "";
-                
+
                 const productData = loadedMenu.products.find(p => p.product_id === parseInt(productId));
 
                 for (let i = 0; i < qty; i++) {
@@ -130,7 +165,19 @@ async function saveTicket_saveButton() {
             await createNewTicket(orderId, destination, selectedItems, ticketComment, username); 
         }
 
-        window.location.href = `/order_edit?order_id=${orderId}`;
+        const userRole = document.getElementById("hidden-role").value.toLowerCase();
+        
+        if (userRole === "kitchen") {
+            window.location.href = "/kitchen_home";
+        } else if (userRole === "bar") {
+            window.location.href = "/bar_home";
+        } else if (userRole === "dessert") {
+            window.location.href = "/dessert_home";
+        } else if (userRole === "checkout") {
+            window.location.href = "/checkout_home";
+        } else if (userRole === "waiter") {
+            window.location.href = `/order_edit?order_id=${orderId}`;
+        }
 
     } catch (error) {
         alert("Error saving ticket: " + error.message);

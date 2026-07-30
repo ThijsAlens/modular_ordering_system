@@ -1,31 +1,20 @@
 [
     {
-        "order_id": 0,
-        "table_reference": "5a",
-        "time_at_creation": "2026-06-04T09:10:22.805625",
+        "order_id": 1,
+        "table_reference": "19",
+        "time_at_creation": "2026-07-26T11:12:58.707610",
         "tickets": [
             {
-                "ticket_id": 0,
-                "order_id": 0,
-                "status": "pending",
+                "ticket_id": 7,
+                "order_id": 1,
+                "status": "completed",
                 "destination": "kitchen",
                 "items": [
                     {
                         "product": {
-                            "product_id": 0,
-                            "name": "Vol-au-vent",
-                            "price": 24.0,
-                            "destination": "kitchen",
-                            "group": "no_group",
-                            "is_active": true
-                        },
-                        "comment": ""
-                    },
-                    {
-                        "product": {
-                            "product_id": 0,
-                            "name": "Vol-au-vent",
-                            "price": 24.0,
+                            "product_id": 2,
+                            "name": "Vlees schotel",
+                            "price": 20.0,
                             "destination": "kitchen",
                             "group": "no_group",
                             "is_active": true
@@ -35,8 +24,8 @@
                     {
                         "product": {
                             "product_id": 3,
-                            "name": "Kinder stoofvlees",
-                            "price": 19.0,
+                            "name": "Noorse schotel",
+                            "price": 25.0,
                             "destination": "kitchen",
                             "group": "no_group",
                             "is_active": true
@@ -45,20 +34,61 @@
                     }
                 ],
                 "comment": "",
-                "time_at_creation": "2026-06-04T09:10:34.072884",
-                "last_editor": "Jean-claude"
+                "time_at_creation": "2026-07-26T11:32:29.863778",
+                "last_editor": "Keuken"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 2,
+        "table_reference": "5",
+        "time_at_creation": "2026-07-26T11:13:12.748827",
+        "tickets": [
+            {
+                "ticket_id": 0,
+                "order_id": 2,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 2,
+                            "name": "Vlees schotel",
+                            "price": 20.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:13:20.464395",
+                "last_editor": "Thijs"
             },
             {
                 "ticket_id": 1,
-                "order_id": 0,
-                "status": "pending",
+                "order_id": 2,
+                "status": "completed",
                 "destination": "bar",
                 "items": [
                     {
                         "product": {
-                            "product_id": 4,
-                            "name": "Plat water",
-                            "price": 2.0,
+                            "product_id": 5,
+                            "name": "Maes Pils",
+                            "price": 2.8,
                             "destination": "bar",
                             "group": "no_group",
                             "is_active": true
@@ -67,20 +97,265 @@
                     },
                     {
                         "product": {
-                            "product_id": 4,
-                            "name": "Plat water",
-                            "price": 2.0,
+                            "product_id": 9,
+                            "name": "Duvel",
+                            "price": 4.5,
                             "destination": "bar",
                             "group": "no_group",
                             "is_active": true
                         },
                         "comment": ""
                     },
+                    {
+                        "product": {
+                            "product_id": 16,
+                            "name": "Ice-tea",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:17:38.920116",
+                "last_editor": "Thijs"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 4,
+        "table_reference": "30",
+        "time_at_creation": "2026-07-26T11:27:33.789457",
+        "tickets": [
+            {
+                "ticket_id": 4,
+                "order_id": 4,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 9,
+                            "name": "Duvel",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:28:01.014569",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 6,
+                "order_id": 4,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 3,
+                            "name": "Noorse schotel",
+                            "price": 25.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:30:57.837600",
+                "last_editor": "Keuken"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 5,
+        "table_reference": "16",
+        "time_at_creation": "2026-07-26T11:35:41.580971",
+        "tickets": [],
+        "status": "active"
+    },
+    {
+        "order_id": 6,
+        "table_reference": "18",
+        "time_at_creation": "2026-07-26T11:37:48.348997",
+        "tickets": [
+            {
+                "ticket_id": 8,
+                "order_id": 6,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:38:02.667720",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 7,
+        "table_reference": "13",
+        "time_at_creation": "2026-07-26T11:40:33.128804",
+        "tickets": [
+            {
+                "ticket_id": 9,
+                "order_id": 7,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": "Met extra bord"
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:40:40.484452",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 23,
+                "order_id": 7,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 17,
+                            "name": "Cola",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:07:52.783112",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 8,
+        "table_reference": "15",
+        "time_at_creation": "2026-07-26T11:41:31.892284",
+        "tickets": [
+            {
+                "ticket_id": 10,
+                "order_id": 8,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:42:03.217262",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 9,
+        "table_reference": "14",
+        "time_at_creation": "2026-07-26T11:43:09.032950",
+        "tickets": [
+            {
+                "ticket_id": 11,
+                "order_id": 9,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
                     {
                         "product": {
                             "product_id": 6,
-                            "name": "Grimbergen blond",
-                            "price": 4.0,
+                            "name": "Carlsberg 0.0%",
+                            "price": 2.8,
                             "destination": "bar",
                             "group": "no_group",
                             "is_active": true
@@ -90,8 +365,8 @@
                     {
                         "product": {
                             "product_id": 10,
-                            "name": "Iced-tea",
-                            "price": 2.0,
+                            "name": "Grimbergen blond",
+                            "price": 4.5,
                             "destination": "bar",
                             "group": "no_group",
                             "is_active": true
@@ -100,50 +375,53 @@
                     }
                 ],
                 "comment": "",
-                "time_at_creation": "2026-06-04T09:11:10.632039",
-                "last_editor": "Jean-claude"
-            }
-        ],
-        "status": "active"
-    },
-    {
-        "order_id": 1,
-        "table_reference": "4",
-        "time_at_creation": "2026-06-04T09:11:48.494106",
-        "tickets": [
+                "time_at_creation": "2026-07-26T11:43:20.877845",
+                "last_editor": "Julie"
+            },
             {
-                "ticket_id": 2,
-                "order_id": 1,
+                "ticket_id": 16,
+                "order_id": 9,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:51:08.240409",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 43,
+                "order_id": 9,
                 "status": "pending",
                 "destination": "dessert",
                 "items": [
                     {
                         "product": {
-                            "product_id": 12,
-                            "name": "Tiramisu",
-                            "price": 7.5,
-                            "destination": "dessert",
-                            "group": "no_group",
-                            "is_active": true
-                        },
-                        "comment": ""
-                    },
-                    {
-                        "product": {
-                            "product_id": 12,
-                            "name": "Tiramisu",
-                            "price": 7.5,
-                            "destination": "dessert",
-                            "group": "no_group",
-                            "is_active": true
-                        },
-                        "comment": ""
-                    },
-                    {
-                        "product": {
-                            "product_id": 13,
+                            "product_id": 32,
                             "name": "Dame blanche",
-                            "price": 6.0,
+                            "price": 7.0,
                             "destination": "dessert",
                             "group": "no_group",
                             "is_active": true
@@ -152,10 +430,1329 @@
                     }
                 ],
                 "comment": "",
-                "time_at_creation": "2026-06-04T09:11:57.516517",
-                "last_editor": "Joske"
+                "time_at_creation": "2026-07-26T13:10:01.831061",
+                "last_editor": "Julie"
             }
         ],
+        "status": "active"
+    },
+    {
+        "order_id": 10,
+        "table_reference": "17",
+        "time_at_creation": "2026-07-26T11:48:45.319683",
+        "tickets": [
+            {
+                "ticket_id": 12,
+                "order_id": 10,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:48:57.823263",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 13,
+                "order_id": 10,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 8,
+                            "name": "Sportzot",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 8,
+                            "name": "Sportzot",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:49:14.427391",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 11,
+        "table_reference": "14",
+        "time_at_creation": "2026-07-26T11:50:33.032542",
+        "tickets": [
+            {
+                "ticket_id": 14,
+                "order_id": 11,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:50:41.827488",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 15,
+                "order_id": 11,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 14,
+                            "name": "Water - bruis",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": "4 gl"
+                    },
+                    {
+                        "product": {
+                            "product_id": 22,
+                            "name": "Glas Ros\u00e9",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 22,
+                            "name": "Glas Ros\u00e9",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:50:50.511515",
+                "last_editor": "Bar"
+            },
+            {
+                "ticket_id": 41,
+                "order_id": 11,
+                "status": "pending",
+                "destination": "dessert",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 26,
+                            "name": "Koffie",
+                            "price": 2.5,
+                            "destination": "dessert",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 30,
+                            "name": "Fruittaart",
+                            "price": 4.0,
+                            "destination": "dessert",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T13:08:52.259851",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 42,
+                "order_id": 11,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 22,
+                            "name": "Glas Ros\u00e9",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T13:09:01.672732",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 12,
+        "table_reference": "12",
+        "time_at_creation": "2026-07-26T11:59:33.613489",
+        "tickets": [
+            {
+                "ticket_id": 17,
+                "order_id": 12,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:59:44.016674",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 18,
+                "order_id": 12,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 9,
+                            "name": "Duvel",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 9,
+                            "name": "Duvel",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 22,
+                            "name": "Glas Ros\u00e9",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T11:59:55.031820",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 13,
+        "table_reference": "11",
+        "time_at_creation": "2026-07-26T12:01:25.806813",
+        "tickets": [
+            {
+                "ticket_id": 19,
+                "order_id": 13,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 1,
+                            "name": "Kinderportie mosselen",
+                            "price": 16.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:01:35.694594",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 20,
+                "order_id": 13,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 11,
+                            "name": "Grimbergen donker",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:01:50.391201",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 14,
+        "table_reference": "18",
+        "time_at_creation": "2026-07-26T12:03:30.348296",
+        "tickets": [
+            {
+                "ticket_id": 21,
+                "order_id": 14,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 1,
+                            "name": "Kinderportie mosselen",
+                            "price": 16.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 1,
+                            "name": "Kinderportie mosselen",
+                            "price": 16.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:03:40.450986",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 22,
+                "order_id": 14,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:03:48.014602",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 15,
+        "table_reference": "10",
+        "time_at_creation": "2026-07-26T12:09:57.774644",
+        "tickets": [
+            {
+                "ticket_id": 24,
+                "order_id": 15,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 1,
+                            "name": "Kinderportie mosselen",
+                            "price": 16.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:10:11.448370",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 16,
+        "table_reference": "16",
+        "time_at_creation": "2026-07-26T12:19:39.771280",
+        "tickets": [
+            {
+                "ticket_id": 25,
+                "order_id": 16,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 7,
+                            "name": "Hoegaarden",
+                            "price": 3.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 14,
+                            "name": "Water - bruis",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:19:51.142928",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 17,
+        "table_reference": "66",
+        "time_at_creation": "2026-07-26T12:25:13.850638",
+        "tickets": [],
+        "status": "active"
+    },
+    {
+        "order_id": 18,
+        "table_reference": "67",
+        "time_at_creation": "2026-07-26T12:28:34.449507",
+        "tickets": [
+            {
+                "ticket_id": 26,
+                "order_id": 18,
+                "status": "completed",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 10,
+                            "name": "Grimbergen blond",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 21,
+                            "name": "Fles witte wijn",
+                            "price": 18.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:28:46.652212",
+                "last_editor": "Daan"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 19,
+        "table_reference": "60",
+        "time_at_creation": "2026-07-26T12:31:10.858930",
+        "tickets": [
+            {
+                "ticket_id": 27,
+                "order_id": 19,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 20,
+                            "name": "Glas wit",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 22,
+                            "name": "Glas Ros\u00e9",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:31:28.531900",
+                "last_editor": "Daan"
+            },
+            {
+                "ticket_id": 28,
+                "order_id": 19,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:31:36.717010",
+                "last_editor": "Daan"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 20,
+        "table_reference": "17",
+        "time_at_creation": "2026-07-26T12:31:57.149594",
+        "tickets": [
+            {
+                "ticket_id": 29,
+                "order_id": 20,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:32:07.954419",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 35,
+                "order_id": 20,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 14,
+                            "name": "Water - bruis",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:46:00.358090",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 21,
+        "table_reference": "64",
+        "time_at_creation": "2026-07-26T12:41:31.346979",
+        "tickets": [
+            {
+                "ticket_id": 30,
+                "order_id": 21,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 5,
+                            "name": "Maes Pils",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 5,
+                            "name": "Maes Pils",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 12,
+                            "name": "Water - natuur",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 16,
+                            "name": "Ice-tea",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:42:23.779637",
+                "last_editor": "Thijs"
+            },
+            {
+                "ticket_id": 38,
+                "order_id": 21,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 5,
+                            "name": "Maes Pils",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:51:31.808580",
+                "last_editor": "Thijs"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 22,
+        "table_reference": "65",
+        "time_at_creation": "2026-07-26T12:43:57.366862",
+        "tickets": [
+            {
+                "ticket_id": 31,
+                "order_id": 22,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 8,
+                            "name": "Sportzot",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 14,
+                            "name": "Water - bruis",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": "6"
+                    },
+                    {
+                        "product": {
+                            "product_id": 21,
+                            "name": "Fles witte wijn",
+                            "price": 18.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": "6"
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:44:34.746715",
+                "last_editor": "Thijs"
+            },
+            {
+                "ticket_id": 32,
+                "order_id": 22,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:44:41.667084",
+                "last_editor": "Thijs"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 23,
+        "table_reference": "17",
+        "time_at_creation": "2026-07-26T12:44:56.925541",
+        "tickets": [
+            {
+                "ticket_id": 33,
+                "order_id": 23,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:45:05.865750",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 34,
+                "order_id": 23,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 14,
+                            "name": "Water - bruis",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 21,
+                            "name": "Fles witte wijn",
+                            "price": 18.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": "2gl"
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:45:23.650894",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 24,
+        "table_reference": "15",
+        "time_at_creation": "2026-07-26T12:49:47.111876",
+        "tickets": [
+            {
+                "ticket_id": 36,
+                "order_id": 24,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:50:25.951906",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 37,
+                "order_id": 24,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 9,
+                            "name": "Duvel",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 9,
+                            "name": "Duvel",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 20,
+                            "name": "Glas wit",
+                            "price": 4.5,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T12:50:38.015109",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 25,
+        "table_reference": "18",
+        "time_at_creation": "2026-07-26T13:02:15.538136",
+        "tickets": [
+            {
+                "ticket_id": 39,
+                "order_id": 25,
+                "status": "completed",
+                "destination": "kitchen",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 0,
+                            "name": "Mosselen natuur",
+                            "price": 28.0,
+                            "destination": "kitchen",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T13:02:24.466664",
+                "last_editor": "Julie"
+            },
+            {
+                "ticket_id": 40,
+                "order_id": 25,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 12,
+                            "name": "Water - natuur",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 21,
+                            "name": "Fles witte wijn",
+                            "price": 18.0,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": "2gl"
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T13:02:41.045789",
+                "last_editor": "Julie"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 26,
+        "table_reference": "53",
+        "time_at_creation": "2026-07-26T13:59:13.276821",
+        "tickets": [
+            {
+                "ticket_id": 44,
+                "order_id": 26,
+                "status": "pending",
+                "destination": "bar",
+                "items": [
+                    {
+                        "product": {
+                            "product_id": 5,
+                            "name": "Maes Pils",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 17,
+                            "name": "Cola",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 17,
+                            "name": "Cola",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    },
+                    {
+                        "product": {
+                            "product_id": 18,
+                            "name": "Cola-zero",
+                            "price": 2.8,
+                            "destination": "bar",
+                            "group": "no_group",
+                            "is_active": true
+                        },
+                        "comment": ""
+                    }
+                ],
+                "comment": "",
+                "time_at_creation": "2026-07-26T14:00:13.575732",
+                "last_editor": "Thijs"
+            }
+        ],
+        "status": "active"
+    },
+    {
+        "order_id": 27,
+        "table_reference": "1",
+        "time_at_creation": "2026-07-26T14:09:22.193146",
+        "tickets": [],
         "status": "active"
     }
 ]
